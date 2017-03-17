@@ -665,10 +665,10 @@ func (s *EtcdServer) run() {
 	// asynchronously accept apply packets, dispatch progress in-order
 	sched := schedule.NewFIFOScheduler()
 	ep := etcdProgress{
-		confState: sn.Metadata.ConfState,
-		snapi:     sn.Metadata.Index,
-		appliedt:  sn.Metadata.Term,
-		appliedi:  sn.Metadata.Index,
+		confState: snap.Metadata.ConfState,
+		snapi:     snap.Metadata.Index,
+		appliedt:  snap.Metadata.Term,
+		appliedi:  snap.Metadata.Index,
 	}
 
 	defer func() {
